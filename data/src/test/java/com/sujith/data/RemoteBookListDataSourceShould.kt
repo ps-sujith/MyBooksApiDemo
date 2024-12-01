@@ -2,12 +2,12 @@ package com.sujith.data
 
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.sujith.data.bookList.dataSource.RemoteBookListDataSource
-import com.sujith.data.bookList.dataSource.RemoteBookListDataSourceImpl
-import com.sujith.data.bookList.dto.BookListDto
-import com.sujith.data.bookList.dto.ReadingLogEntry
-import com.sujith.data.bookList.dto.Work
 import com.sujith.data.common.api.BooksApiService
+import com.sujith.data.feature_bookList.dataSource.RemoteBookListDataSource
+import com.sujith.data.feature_bookList.dataSource.RemoteBookListDataSourceImpl
+import com.sujith.data.feature_bookList.dto.BookListDto
+import com.sujith.data.feature_bookList.dto.ReadingLogEntry
+import com.sujith.data.feature_bookList.dto.Work
 import io.reactivex.Single
 import org.junit.Assert.assertEquals
 import org.junit.Rule

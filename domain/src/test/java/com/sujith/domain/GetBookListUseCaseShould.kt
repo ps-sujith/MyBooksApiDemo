@@ -1,9 +1,9 @@
 package com.sujith.domain
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.sujith.domain.bookList.model.BookItem
-import com.sujith.domain.bookList.repository.BookListRepository
-import com.sujith.domain.bookList.usecase.GetBookListUseCase
+import com.sujith.domain.feature_bookList.model.BookItem
+import com.sujith.domain.feature_bookList.repository.BookListRepository
+import com.sujith.domain.feature_bookList.usecase.GetBookListUseCase
 import io.reactivex.Single
 import org.junit.Assert.assertEquals
 import org.junit.Rule

@@ -2,8 +2,9 @@ package com.sujith.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import app.cash.turbine.test
-import com.sujith.domain.bookList.model.BookItem
-import com.sujith.domain.bookList.usecase.GetBookListUseCase
+import com.sujith.domain.feature_bookList.model.BookItem
+import com.sujith.domain.feature_bookList.usecase.GetBookListUseCase
+import com.sujith.ui.feature_bookList.BookListViewModel
 import io.reactivex.Single
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals

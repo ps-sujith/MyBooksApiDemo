@@ -1,13 +1,12 @@
 package com.sujith.data
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.sujith.data.bookList.dataSource.RemoteBookListDataSource
-import com.sujith.data.bookList.dto.BookListDto
-import com.sujith.data.bookList.dto.ReadingLogEntry
-import com.sujith.data.bookList.dto.Work
-import com.sujith.data.bookList.repository.BookListRepositoryImpl
-import com.sujith.domain.bookList.model.BookItem
-import com.sujith.domain.bookList.repository.BookListRepository
+import com.sujith.data.feature_bookList.dataSource.RemoteBookListDataSource
+import com.sujith.data.feature_bookList.dto.BookListDto
+import com.sujith.data.feature_bookList.dto.ReadingLogEntry
+import com.sujith.data.feature_bookList.dto.Work
+import com.sujith.data.feature_bookList.repository.BookListRepositoryImpl
+import com.sujith.domain.feature_bookList.repository.BookListRepository
 import io.reactivex.Single
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
