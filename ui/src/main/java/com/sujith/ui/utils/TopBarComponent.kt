@@ -11,16 +11,14 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.TextUnit
-import androidx.compose.ui.unit.sp
-import com.sujith.ui.R
+import com.sujith.ui.resource.appName
+import com.sujith.ui.resource.app_bar_title_size
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -35,7 +33,7 @@ fun TopAppBarComponent(
             containerColor = MaterialTheme.colorScheme.surface
         ),
         title = {
-            AppTitle(dimensionResource(id = R.dimen.app_bar_title_size).value.sp)
+            AppTitle(app_bar_title_size)
         },
 
         navigationIcon = {
@@ -71,7 +69,7 @@ fun AppTitle(textSize: TextUnit) {
                 fontSize = textSize,
             )
         ) {
-            append(stringResource(R.string.app))
+            append(appName)
         }
 
     }

@@ -8,6 +8,6 @@ object ItemUtil {
         title = "Biology",
         firstPublishYear = 1987,
         coverUrl = "https://covers.openlibrary.org/b/id/581911-M.jpg",
-        authorNames = "Neil Alexander Campbell"
+        authorNames = listOf("Neil Alexander Campbell")
     )
 }

@@ -1,7 +1,7 @@
 package com.sujith.data.feature_bookList.repository
 
-import com.sujith.data.characterList.mapper.toDomain
 import com.sujith.data.feature_bookList.dataSource.RemoteBookListDataSource
+import com.sujith.data.feature_bookList.mapper.toDomain
 import com.sujith.domain.feature_bookList.model.BookItem
 import com.sujith.domain.feature_bookList.repository.BookListRepository
 import io.reactivex.Observable

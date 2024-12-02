@@ -5,5 +5,5 @@ data class BookItem(
     val title: String?,
     val firstPublishYear: Int,
     val coverUrl: String,
-    val authorNames: String?,
+    val authorNames: List<String>,
 )

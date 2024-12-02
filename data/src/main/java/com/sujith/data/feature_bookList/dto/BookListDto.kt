@@ -15,7 +15,7 @@ data class ReadingLogEntry(
 
 data class Work(
     @SerializedName("author_names")
-    val authorNames: List<String>,
+    val authorNames: List<String>?,
     @SerializedName("cover_id")
     val coverId: Int,
     @SerializedName("first_publish_year")
@@ -23,5 +23,5 @@ data class Work(
     @SerializedName("key")
     val key: String,
     @SerializedName("title")
-    val title: String
+    val title: String?
 )

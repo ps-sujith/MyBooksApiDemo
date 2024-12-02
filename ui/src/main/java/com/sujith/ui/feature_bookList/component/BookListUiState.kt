@@ -1,4 +1,4 @@
-package com.sujith.ui.feature_bookList
+package com.sujith.ui.feature_bookList.component
 
 import com.sujith.domain.feature_bookList.model.BookItem
 

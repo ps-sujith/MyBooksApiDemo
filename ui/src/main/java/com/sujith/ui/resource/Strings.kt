@@ -1,3 +1,3 @@
 package com.sujith.ui.resource
 
-val appName = "My Books"
+const val appName = "Books"

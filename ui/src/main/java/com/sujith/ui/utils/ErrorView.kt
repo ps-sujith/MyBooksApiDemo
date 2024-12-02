@@ -11,13 +11,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.sujith.ui.R
-import com.sujith.ui.utils.Lottie
+import com.sujith.ui.resource.large_font_size
+import com.sujith.ui.resource.loader_size_small
 
 @Composable
 fun ErrorView(error: String) {
@@ -30,12 +29,12 @@ fun ErrorView(error: String) {
             rawFile = R.raw.error_anim,
             isPlaying = true,
             iterations = Int.MAX_VALUE,
-            modifier = Modifier.size(dimensionResource(id = R.dimen.loader_size_small))
+            modifier = Modifier.size(loader_size_small)
         )
         Spacer(Modifier.height(10.dp))
         Text(
             text = error,
-            fontSize = dimensionResource(id = R.dimen.large_font_size).value.sp,
+            fontSize = large_font_size,
             color = MaterialTheme.colorScheme.onBackground,
             fontFamily = FontFamily.Serif,
             fontWeight = FontWeight.Bold

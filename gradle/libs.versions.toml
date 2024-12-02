@@ -70,6 +70,7 @@ rxkotlin = { module = "io.reactivex.rxjava2:rxkotlin", version.ref = "rxKotlin" 
 adapter-rxjava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofit" }
 ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "uiToolingPreview" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines-test" }
+androidx-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 
 
 [plugins]
@@ -81,7 +82,7 @@ daggerHilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 
 [bundles]
-core = ["androidx-activity-compose", "androidx-core-ktx", "androidx-lifecycle-runtime-ktx", "androidx-material3", "androidx-ui", "androidx-ui-graphics", "androidx-ui-tooling-preview", "material"]
+core = ["androidx-activity-compose", "androidx-core-ktx", "androidx-lifecycle-runtime-ktx", "androidx-material3", "androidx-ui", "androidx-ui-graphics", "androidx-ui-tooling-preview", "material", "androidx-material-icons-extended"]
 retrofit = ["retrofit", "converter-gson"]
 navigation = ["navigation-compose", "kotlinx-serialization-json"]
 unitTest = ["junit", "mockito-kotlin", "mockito-inline",

@@ -2,6 +2,7 @@ package com.sujith.ui.feature_bookList
 
 import androidx.lifecycle.ViewModel
 import com.sujith.domain.feature_bookList.usecase.GetBookListUseCase
+import com.sujith.ui.feature_bookList.component.BookListUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
