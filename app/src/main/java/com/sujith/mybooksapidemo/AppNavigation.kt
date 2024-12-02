@@ -12,9 +12,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import com.sujith.ui.feature_bookDetail.BookDetailScreen
+import com.sujith.ui.feature_bookDetail.BookDetailViewModel
 import com.sujith.ui.feature_bookList.BookListScreen
 import com.sujith.ui.feature_bookList.BookListViewModel
 import com.sujith.ui.feature_splash.SplashScreen
+import com.sujith.ui.navigation.BookDetail
 import com.sujith.ui.navigation.BookList
 import com.sujith.ui.navigation.MyBooksApp
 import com.sujith.ui.navigation.Splash
@@ -31,37 +35,28 @@ fun AppNavigation() {
                 val bookListVM =
                     entry.sharedViewModel<BookListViewModel>(navController = navController)
                 val bookListUiState by bookListVM.bookListUiState.collectAsStateWithLifecycle()
-                BookListScreen(bookListUiState) {
+                BookListScreen(bookListUiState) { bookId ->
+                    navController.navigate(BookDetail(bookId))
+                }
+            }
 
+            composable<BookDetail> { entry ->
+                val bookListVM =
+                    entry.sharedViewModel<BookListViewModel>(navController = navController)
+                val bookListUiState by bookListVM.bookListUiState.collectAsStateWithLifecycle()
+                val bookDetailVM: BookDetailViewModel = hiltViewModel(entry)
+                val bookDetailUiState by bookDetailVM.bookDetailUiState.collectAsStateWithLifecycle()
+                val bookId = entry.toRoute<BookDetail>().bookId
+                val selectedBook =
+                    bookListUiState.bookList.takeIf { it.isNotEmpty() }?.find { it.id == bookId }
+                BookDetailScreen(
+                    bookListUiState = selectedBook,
+                    bookDetailUiState = bookDetailUiState
+                ) {
+                    navController.navigateUp()
                 }
             }
         }
-//            composable<CatDetail> { entry ->
-//                val catListViewModel =
-//                    entry.sharedViewModel<CatListViewModel>(navController = navController)
-//                val favouriteViewModel: FavouriteViewModel = koinViewModel()
-//                val catListUiState by catListViewModel.catListUiState.collectAsStateWithLifecycle()
-//                val favListUiState by favouriteViewModel.favListUiState.collectAsStateWithLifecycle()
-//                //maintaining a single detail screen for cat list and favourite list
-//                val isFromFavourites = entry.toRoute<CatDetail>().isInvokedFromFavourite
-//                val sourceList =
-//                    if (isFromFavourites) favListUiState.favList else catListUiState.catList
-//                val catId = entry.toRoute<CatDetail>().id
-//                val selectedCatItem =
-//                    sourceList.takeIf { it.isNotEmpty() }?.firstOrNull { it.id == catId }
-//                CatDetailScreen(
-//                    navController = navController, selectedItem = selectedCatItem
-//                ) { isFavourite, catListItem ->
-//                    if (isFavourite) {
-//                        favouriteViewModel.addFavouriteCat(catListItem.copy(isFavourite = true))
-//                    } else {
-//                        if (isFromFavourites) {
-//                            navController.navigateUp()
-//                        }
-//                        favouriteViewModel.removeFavouriteCat(catListItem)
-//                    }
-//                }
-//            }
     }
 }
 
@@ -79,5 +74,5 @@ inline fun <reified T : ViewModel> NavBackStackEntry.sharedViewModel(
     val parentEntry = remember(this) {
         navController.getBackStackEntry(navGraphRoute)
     }
-    return hiltViewModel(viewModelStoreOwner = parentEntry)
+    return hiltViewModel(parentEntry)
 }

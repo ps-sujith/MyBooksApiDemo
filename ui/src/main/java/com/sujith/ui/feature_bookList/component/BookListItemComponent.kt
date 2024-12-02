@@ -100,13 +100,13 @@ fun BookListItemComponent(
                     color = Color.White,
                     fontWeight = FontWeight.ExtraBold,
                     fontFamily = FontFamily(
-                        Font(R.font.title_regular, FontWeight.Light)
+                        Font(R.font.title_regular, FontWeight.Thin)
                     )
                 )
 
                 if (book.authorNames.isNotEmpty()) {
                     Text(
-                        text = book.authorNames.toString(),
+                        text = book.authorNames.joinToString(),
                         modifier = Modifier
                             .padding(
                                 start = padding_medium,
@@ -132,7 +132,7 @@ fun BookListItemComponent(
 fun CatListItemComponentPreview() {
     Surface {
         BookListItemComponent(
-            book = ItemUtil.getDummyCatItem(),
+            book = ItemUtil.getDummyBookItem(),
             onItemClick = {})
     }
 }

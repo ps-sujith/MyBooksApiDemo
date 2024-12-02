@@ -21,7 +21,6 @@ class BookListViewModel @Inject constructor(private val getBooksListUseCase: Get
     private val disposable: CompositeDisposable = CompositeDisposable()
 
     init {
-        println("MATRIX _ VM INIT")
         loadBookList()
     }
 

@@ -1,5 +1,6 @@
 [versions]
 agp = "8.7.2"
+constraintlayoutCompose = "1.0.1"
 kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -32,6 +33,7 @@ hilt = "2.49"
 hilt-navigation-compose = "1.2.0"
 
 [libraries]
+androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
@@ -82,7 +84,7 @@ daggerHilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 
 [bundles]
-core = ["androidx-activity-compose", "androidx-core-ktx", "androidx-lifecycle-runtime-ktx", "androidx-material3", "androidx-ui", "androidx-ui-graphics", "androidx-ui-tooling-preview", "material", "androidx-material-icons-extended"]
+core = ["androidx-activity-compose", "androidx-core-ktx", "androidx-lifecycle-runtime-ktx", "androidx-material3", "androidx-ui", "androidx-ui-graphics", "androidx-ui-tooling-preview", "material", "androidx-material-icons-extended", "androidx-constraintlayout-compose"]
 retrofit = ["retrofit", "converter-gson"]
 navigation = ["navigation-compose", "kotlinx-serialization-json"]
 unitTest = ["junit", "mockito-kotlin", "mockito-inline",

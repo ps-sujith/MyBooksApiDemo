@@ -1,5 +1,6 @@
 package com.sujith.ui.feature_bookDetail
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.sujith.domain.feature_bookDetail.usecase.GetBookDetailUseCase
 import com.sujith.ui.feature_bookDetail.component.BookDetailUiState
@@ -14,12 +15,19 @@ import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
 @HiltViewModel
-class BookDetailViewModel @Inject constructor(private val getBookDetailUseCase: GetBookDetailUseCase) :
+class BookDetailViewModel @Inject constructor(
+    private val getBookDetailUseCase: GetBookDetailUseCase,
+    savedStateHandle: SavedStateHandle
+) :
     ViewModel() {
-    private val _bookDetailUiState = MutableStateFlow(BookDetailUiState(isLoading = true))
+    private val _bookDetailUiState = MutableStateFlow(BookDetailUiState(isLoading = false))
     val bookDetailUiState = _bookDetailUiState.asStateFlow()
     private val disposable: CompositeDisposable = CompositeDisposable()
+    private val bookId: String = savedStateHandle.get<String>("bookId") ?: ""
 
+    init {
+        loadBookDetail(bookId)
+    }
 
     private fun loadBookDetail(bookId: String) {
         disposable.add(

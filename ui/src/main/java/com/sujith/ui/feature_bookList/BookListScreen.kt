@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -32,8 +31,7 @@ fun BookListScreen(bookListUiState: BookListUiState, itemClick: (id: String) -> 
     val scrollBehaviour = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     Scaffold(
         modifier = Modifier
-            .nestedScroll(scrollBehaviour.nestedScrollConnection)
-            .systemBarsPadding(),
+            .nestedScroll(scrollBehaviour.nestedScrollConnection),
         topBar = {
             TopAppBarComponent(scrollBehaviour, false) {}
         },

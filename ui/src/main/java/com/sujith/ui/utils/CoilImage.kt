@@ -22,7 +22,7 @@ fun CoilImage(
         Image(
             painter = painterResource(id = R.drawable.placeholder),
             contentDescription = "User image",
-            contentScale = ContentScale.Crop,
+            contentScale = ContentScale.Inside,
             modifier = modifier
         )
 
