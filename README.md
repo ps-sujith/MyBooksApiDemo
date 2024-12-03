@@ -27,7 +27,7 @@
 ### FEATURES
 * Book List- Lists all the books already read with cover image ,title and author name
 * Book  Details - Displays the details of selected book with the extra details
-*   
+
   
 ### ARCHITECTURE & DESIGN PATTERN
 * SOLID PRINCIPLE - The app follows SOLID design principles to ensure scalability and maintainability.
