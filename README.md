@@ -1,7 +1,8 @@
 # BOOKS API DEMO
 
 
-"A sample app to showcase the Open Library API, built in Kotlin using Jetpack Compose and architecture components, following Clean Code principles and modularization."
+"Android app built with jetpack compose that displays data from the Open Library API. The home screen will show a list of already read books, each featuring an cover , title and author name. When a user selects a book, it will be navigated to a detail screen with more in-depth information about that book. The project  complies to SOLID principles and follow a clean architecture design pattern.
+"
 
 ![photo-collage png (1)](https://github.com/user-attachments/assets/9486af6b-2077-4f21-ad1e-016fa991fd41)
 
@@ -34,7 +35,9 @@
 * MODULAR - The app codebase is modularized by layers (UI, Data, Domain), with the Domain module being independent of the other modules.
 * DESIGN PATTERN - Application is developed using Test-Driven Development (TDD) and follows the Model-View-ViewModel (MVVM) design pattern
 
-
+### IMPROVEMENTS
+* RX kotlin can be optimized for more scalability 
+* Furthermore cosmetics and refactoring is an endless thought
 
 
 
