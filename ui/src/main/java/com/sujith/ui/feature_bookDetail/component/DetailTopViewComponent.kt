@@ -9,10 +9,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -20,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
@@ -32,7 +33,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.sujith.domain.feature_bookList.model.BookItem
 import com.sujith.ui.R
-import com.sujith.ui.resource.card_view_card_elevation
+import com.sujith.ui.resource.card_view_card_elevation_image
 import com.sujith.ui.resource.extra_large_font_size
 import com.sujith.ui.resource.large_font_size
 import com.sujith.ui.resource.padding_extra_small
@@ -55,8 +56,14 @@ fun DetailsTopViewComponent(selectedBook: BookItem) {
         Card(
             modifier = Modifier
                 .wrapContentSize()
-                .padding(vertical = padding_large),
-            elevation = CardDefaults.elevatedCardElevation(card_view_card_elevation),
+                .padding(vertical = padding_large)
+                .shadow(
+                    elevation = card_view_card_elevation_image,
+                    shape = RoundedCornerShape(8.dp),
+                    spotColor = Color.Yellow,
+                    ambientColor = Color.Yellow
+                )
+
         ) {
             CoilImage(
                 context = context,
@@ -66,6 +73,7 @@ fun DetailsTopViewComponent(selectedBook: BookItem) {
                     .width((configuration.screenHeightDp / 4.2).dp)
             )
         }
+        Spacer(modifier = Modifier.height(5.dp))
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -73,7 +81,6 @@ fun DetailsTopViewComponent(selectedBook: BookItem) {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
-
             Text(
                 text = selectedBook.title ?: "",
                 modifier = Modifier.padding(padding_extra_small),

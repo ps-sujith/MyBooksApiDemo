@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.sujith.ui.resource.card_view_card_elevation
 import com.sujith.ui.resource.padding_large
-import com.sujith.ui.resource.padding_small
+import com.sujith.ui.resource.padding_medium
 import com.sujith.ui.resource.small_medium_font_size
 
 
@@ -27,7 +27,7 @@ fun TitleTextComponent(title: String, content: String) {
             .fillMaxWidth()
             .padding(
                 horizontal = padding_large,
-                vertical = padding_small
+                vertical = padding_medium
             ),
         elevation = CardDefaults.elevatedCardElevation(card_view_card_elevation),
 
@@ -41,7 +41,7 @@ fun TitleTextComponent(title: String, content: String) {
             maxLines = 2,
             fontWeight = FontWeight.Bold,
             fontFamily = FontFamily.Monospace,
-            modifier = Modifier.padding(padding_small)
+            modifier = Modifier.padding(padding_medium)
         )
 
         Text(
@@ -50,7 +50,7 @@ fun TitleTextComponent(title: String, content: String) {
             color = MaterialTheme.colorScheme.onBackground,
             maxLines = 2,
             fontFamily = FontFamily.Serif,
-            modifier = Modifier.padding(padding_small)
+            modifier = Modifier.padding(padding_medium)
         )
     }
 }

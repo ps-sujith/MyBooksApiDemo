@@ -61,7 +61,7 @@ fun BookListScreen(bookListUiState: BookListUiState, itemClick: (id: String) -> 
                         modifier = Modifier
                             .fillMaxSize()
                             .background(MaterialTheme.colorScheme.surfaceContainer),
-                        columns = GridCells.Fixed(2),
+                        columns = GridCells.Fixed(1),
                         content = {
                             items(bookListUiState.bookList) { bookItem ->
                                 if (!bookItem.title.isNullOrEmpty()) {
@@ -73,7 +73,7 @@ fun BookListScreen(bookListUiState: BookListUiState, itemClick: (id: String) -> 
                         }
                     )
                 } else {
-                    ErrorView(error = "Something Went wrong !!")
+                    ErrorView(error = bookListUiState.error.ifEmpty { "Something Went wrong !!" })
                 }
             }
         }
